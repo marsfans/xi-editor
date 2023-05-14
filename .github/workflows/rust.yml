@@ -23,7 +23,7 @@ jobs:
       uses: actions/upload-artifact@v3.1.2
       with:
         name: xi-linux-amd64-0.3.0
-        path: ./rust/target/release/xi-editor
+        path: ./rust/target/release/xi-core
   build-windows:
     runs-on: windows-latest
     steps:
@@ -32,9 +32,10 @@ jobs:
       run: |
         cd ./rust
         cargo build --release
+        ls
         tree ./target
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.2
       with:
         name: xi-windows-amd64-0.3.0
-        path: ./rust/target/release/xi-editor.exe
+        path: ./rust/target/release/xi-core.exe
